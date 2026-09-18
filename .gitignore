@@ -1,0 +1,22 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# project scaffold
+.DS_Store
+output/**
+!output/**/
+!.gitkeep
+
+data/**
+!data/**/
+!.gitkeep
+
+paper/build/
