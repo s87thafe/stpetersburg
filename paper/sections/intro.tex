@@ -1,0 +1,71 @@
+\section{Introduction}
+
+The St. Petersburg paradox was first introduced by Daniel Bernouilli in 1738 \citet{bernoulli1954exposition}.
+Its core principle is a simple game of coin tosses. A fair coin is tossed until it comes up heads.
+The payoff of the game is determined by the number of tosses it takes to get heads.
+If it takes $n$ tosses to get heads, the player receives a payoff of $2^n$ dollars.
+As the expected value of the game is indefinite, a rational player who is maximizing expected value should be willing to pay any finite amount to play.
+This clearly does not hold in practice.
+
+A fair coin is tossed until it comes up heads for the first time. If the game stops after
+$k$ tosses, you are paid $2^k$. This results in the following lottery:
+
+To motivate the preceding concepts, let us consider the so-called St. Petersburg paradox. A
+fair coin is tossed until it comes up heads for the first time. If the game stops after $k$ tosses,
+you are paid $2^k$. This results in the following lottery:
+
+\[
+\begin{array}{c|cccccc}
+\text{Payoff} & \$2 & \$4 & \$8 & \cdots & \$2^k & \cdots \\
+\text{Probability} & \frac{1}{2} & \frac{1}{4} & \frac{1}{8} & \cdots & \frac{1}{2^k} & \cdots
+\end{array}
+\]
+
+The expected payoff of this lottery is
+\[
+2 \cdot \frac{1}{2} + 4 \cdot \frac{1}{4} + 8 \cdot \frac{1}{8} + \cdots
+= 1 + 1 + 1 + \cdots = \infty.
+\]
+So, if you are maximizing your expected payoff, you should be willing to pay any amount of
+money to participate in the game. Since, empirically, most people would not do this, expected
+payoff maximization does not seem to be a common objective in this situation. \citet{bernoulli1954exposition}
+suggested that people maximize expected utility rather than payoff. If utility increases
+sufficiently slowly in money, then the expected utility of the game is finite.
+For example, suppose the utility of $n$ is $\log_2 n$. Then, the game has expected utility
+\[
+1 \cdot \frac{1}{2} + 2 \cdot \frac{1}{4} + 3 \cdot \frac{1}{8} + \cdots = 2.
+\]
+
+While this resolves the original paradox, it does not resolve the problem for unbounded utility functions in general. \citet{menger1934unbounded} shows that for any utility function unbounded from above, one can construct a lottery with infinite expected utility. Formally, let $u$ satisfy $\sup_x u(x) = \infty$. Then for every $n \in \mathbb{N}$ there exists an outcome $x_n$ with $u(x_n) \geq 2^n$, and the lottery $L$ paying $x_n$ with probability $2^{-n}$ yields
+\begin{align*}
+    \mathbb{E}[u(L)] = \sum_{n=1}^{\infty} 2^{-n} \, u(x_n) \geq \sum_{n=1}^{\infty} 2^{-n} \, 2^n = \sum_{n=1}^{\infty} 1 = \infty.
+\end{align*}
+For Bernoulli's logarithmic utility, $u(x) = \ln x$, choosing $x_n = e^{2^n}$ gives
+\begin{align*}
+    \mathbb{E}[\ln L] = \sum_{n=1}^{\infty} 2^{-n} \ln\!\left(e^{2^n}\right) = \sum_{n=1}^{\infty} 1 = \infty.
+\end{align*}
+Finite expected utility for every lottery with countable support therefore requires $u$ to be bounded \citet{arrow1974unbounded}.
+
+
+Core Assumptions:
+\begin{itemize}
+    \item Expected values are defined as $E[X]=\sum_{i=1}^{\infty} x_i p_i$ where $x_i$ is the payoff and $p_i$ is the probability of that payoff.
+\end{itemize}
+
+Stanford Encoclopedia
+The well-known axiomatizations proposed by Ramsey (1926), von Neumann and Morgenstern (1947), and Savage (1954) do, for instance, all entail that the decision maker’s utility function is bounded.
+
+Solutions from \href{https://en.wikipedia.org/wiki/St._Petersburg_paradox#cite_note-Peters2011a-28}{Wikipedia}:
+\begin{itemize}
+    \item Expected utility theory: Assuming a diminishing marginal utility of money, the expected utility of the game is finite
+    \item Finite bankroll: The casino has a finite abnkroll, so the expected value of the game is finite: The core idea is to simplify, just adding a hypothetical limit seems counterintuitive, but think martingale betti g system: adding a budget constraint to both participants might be reasonable.
+    \item Ignore events with small probability: stupid
+    \item Ergodicity: fascinating: Kelly criterion
+    \item von Neumann-Morgenstern utility theroy: restrict lotteries to the set of lotteries with finite support (AI summary)
+    \item Savage: bounds utilty (AI summary)
+\end{itemize}
+
+
+
+von Neumann Morgenstern expected utility theorem of von Neumann and Morgenstern (1947)
+

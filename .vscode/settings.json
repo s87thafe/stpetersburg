@@ -1,0 +1,6 @@
+{
+  // LaTeX Workshop passes -outdir=%OUTDIR% to latexmk, which overrides $out_dir
+  // from .latexmkrc. Point it at the same build/ dir so the editor and the CLI
+  // agree on one output location.
+  "latex-workshop.latex.outDir": "%DIR%/build"
+}
