@@ -31,3 +31,6 @@ paper/build/
 *.out
 *.synctex.gz
 *.toc
+
+# pytask state database (machine-local build cache, not a project artifact)
+.pytask/

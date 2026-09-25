@@ -9,12 +9,14 @@ authors = [
 requires-python = ">=3.9"
 dependencies = [
     "ipykernel>=6.31.0",
-    "kaleido>=1.4.0",
+    "jinja2>=3.1.6",
+    "kaleido==0.2.1",
     "matplotlib>=3.9.4",
-    "nbformat>=5.10.4",
+    "nbformat>=5.10",
     "numpy>=2.0.2",
     "pandas>=2.3.3",
-    "plotly>=7.1.0",
+    "plotly>=6.9,<7",
+    "pytask>=0.5.5",
 ]
 
 [project.scripts]
@@ -31,3 +33,6 @@ dev = [
 
 [tool.ruff]
 line-length = 100
+
+[tool.pytask.ini_options]
+paths = ["src/stpetersburg"]
