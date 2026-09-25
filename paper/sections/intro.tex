@@ -1,12 +1,18 @@
-\section{Introduction}
+\section{Paradox}
 
-The St.\ Petersburg paradox was introduced by Daniel Bernoulli in 1738 and republished in English translation as \citet{bernoulli1954exposition}. A fair coin is tossed until it comes up heads for the first time. If this happens on the $n$-th toss, the player receives $2^n$ dollars. The game thus corresponds to the lottery $L$ that pays $2^n$ with probability $2^{-n}$ for $n = 1, 2, \ldots$, with expected payoff
+The St.\ Petersburg paradox was introduced by Daniel Bernoulli in 1738 and republished in English translation as \citet{bernoulli1954exposition}.
+A fair coin is tossed until it comes up heads for the first time.
+If this happens on the $n$-th toss, the player receives $2^n$ dollars.
+The game thus corresponds to the lottery $L$ that pays $2^n$ with probability $2^{-n}$ for $n = 1, 2, \ldots$, with expected payoff
 \begin{align*}
     \mathbb{E}[L] = \sum_{n=1}^{\infty} 2^{-n} \, 2^n = 1 + 1 + 1 + \cdots = \infty.
 \end{align*}
-A player maximizing expected payoff should therefore be willing to pay any finite amount to play. In practice, few people would pay more than a small sum, so expected payoff maximization fails to describe behaviour in this setting.
+A player maximizing expected payoff should therefore be willing to pay any finite amount to play.
+In practice, few people would pay more than a small sum, so expected payoff maximization fails to describe behaviour in this setting.
 
-\citet{bernoulli1954exposition} proposes that individuals maximize expected utility rather than expected payoff. If utility increases sufficiently slowly in money, the expected utility of the game is finite. Take for example the logarithmic utility, here in base 2,
+\citet{bernoulli1954exposition} proposes that individuals maximize expected utility rather than expected payoff.
+If utility increases sufficiently slowly in money, the expected utility of the game is finite.
+Take for example the logarithmic utility, here in base 2,
 \begin{align}\label{eq:log_util}
     u(x) = \log_{2} x,
 \end{align}
@@ -16,7 +22,9 @@ the game yields
 \end{align*}
 which corresponds to a certainty equivalent of $2^2 = 4$ dollars.
 
-While this resolves the original paradox, it does not resolve the problem for unbounded utility functions in general. \citet{menger1934unbounded} shows that for any utility function unbounded from above, one can construct a lottery with infinite expected utility. Formally, let $u$ satisfy $\sup_x u(x) = \infty$. Then for every $n \in \mathbb{N}$ there exists an outcome $x_n$ with $u(x_n) \geq 2^n$, and the lottery $L'$ paying $x_n$ with probability $2^{-n}$ yields
+While this resolves the original paradox, it does not resolve the problem for unbounded utility functions in general.
+\citet{menger1934unbounded} shows that for any utility function unbounded from above, one can construct a lottery with infinite expected utility. Formally, let $u$ satisfy $\sup_x u(x) = \infty$.
+Then for every $n \in \mathbb{N}$ there exists an outcome $x_n$ with $u(x_n) \geq 2^n$, and the lottery $L'$ paying $x_n$ with probability $2^{-n}$ yields
 \begin{align*}
     \mathbb{E}[u(L')] = \sum_{n=1}^{\infty} 2^{-n} \, u(x_n) \geq \sum_{n=1}^{\infty} 2^{-n} \, 2^n = \infty.
 \end{align*}
@@ -25,15 +33,4 @@ In the example of the proposed logarithmic utility in \eqref{eq:log_util}, choos
     \mathbb{E}[\log_2 L'] = \sum_{n=1}^{\infty} 2^{-n} \log_2\!\left(2^{2^n}\right) = \sum_{n=1}^{\infty} 1 = \infty.
 \end{align*}
 
-check from here
-The literature offers two responses to this problem. The first bounds utility. Once lotteries with infinitely many outcomes are admitted, the axioms of expected utility theory rule out lotteries with infinite expected utility and thereby force $u$ to be bounded \citep{fishburn1970utility}. For $u \leq \bar{u}$, every lottery satisfies $\mathbb{E}[u(L)] \leq \bar{u} < \infty$. \citet{menger1934unbounded} himself rejects this solution as a description of behaviour: individuals decline to pay for the game not because large prizes lack value, but because winning them is highly improbable.
-
-The second response restricts the set of lotteries instead of the utility function. \citet{arrow1974unbounded} shows that if $u$ is concave and monotone increasing with $u(0)$ finite, and $\mathbb{E}[L]$ is finite, then expected utility is finite. Since $u$ is concave, it lies below its tangent at any $x_0 > 0$,
-\begin{align*}
-    u(x) \leq u(x_0) + u'(x_0)(x - x_0),
-\end{align*}
-so that
-\begin{align*}
-    \mathbb{E}[u(L)] \leq u(x_0) + u'(x_0)\left(\mathbb{E}[L] - x_0\right) < \infty.
-\end{align*}
-Under risk aversion, infinite expected utility therefore requires infinite expected payoff. Such lotteries cannot be offered in practice, since no counterparty can cover arbitrarily large payouts. Unbounded utility functions such as $\ln(1 + x)$ thus remain admissible on every lottery with finite mean.
+\citet{samuelson1977petersburg} termed this construction, in which the utility of the $n$-th payoff grows fast enough to offset the vanishing probabilities, Super-Petersburg Paradox.

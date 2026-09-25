@@ -1,1 +1,19 @@
-\section{The Model}
+\section{Solution}
+
+Seen through \citet{seidl2013meta}, the paradox turns on the relative magnitude of two ratios: it arises whenever the growth rate of utility, $u(x_{n+1})/u(x_n)$, exceeds the decay rate of probability, $p(x_n)/p(x_{n+1})$, for infinitely many outcomes.
+Any solution must therefore either restrain the growth of utility or restrict the class of lotteries over which the comparison is made.
+
+The first response bounds utility.
+\citet{menger1934unbounded} shows that boundedness is necessary as well as sufficient: expected utility is finite for all St.\ Petersburg-type lotteries if and only if there exists a $\bar{u} < \infty$ with $u(x) \leq \bar{u}$ for all $x$, in which case $\mathbb{E}[u(L)] \leq \bar{u} < \infty$ \citep{seidl2013meta}.
+\citet{menger1934unbounded} himself rejects boundedness as a description of behaviour, but the restriction turns out to be unavoidable within the axiomatic theories: \citet{fishburn1970utility} shows that the axioms of \citet{savage1954axiom} already imply a bounded utility function.
+
+The second response restricts the set of admissible lotteries rather than the utility function. \citet{arrow1974unbounded} shows that if $u$ is concave and monotone increasing with $u(0)$ finite, and the lottery has a finite mean, then expected utility is finite.
+The argument follows from Jensen's inequality, since concavity of $u(\cdot)$ gives
+\begin{align*}
+    \mathbb{E}[u(L)] \leq u\!\left(\mathbb{E}[L]\right) < \infty,
+\end{align*}
+where the right-hand side is finite whenever $\mathbb{E}[L] < \infty$ \citep{seidl2013meta}.
+
+Restrictions of this kind have a long pedigree.
+\citet{bernoulli1954exposition} reports the proposal to bound the winnings at $2^{24}$ coins, and later authors justified bounded winnings by the finiteness of the bookmaker's wealth or of the time available to play \citep{seidl2013meta}.
+A parallel strand introduces finiteness on the probability side instead, treating probabilities below $1/10{,}000$ as zero \citep{seidl2013meta}.
