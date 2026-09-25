@@ -10,7 +10,6 @@ SRC = Path(__file__).parent.resolve()
 ROOT = SRC.parent.parent
 DATA_PROCESSED = ROOT / "data" / "processed"
 FIGURES = ROOT / "output" / "figures"
-TABLES = ROOT / "output" / "tables"
 
 #: Master seed. Every draw in the project descends from this one integer.
 SEED = 25_092_026
@@ -19,13 +18,9 @@ SEED = 25_092_026
 P_HEADS = 0.5  # probability of the coin landing heads on any flip
 PAYOFF_BASE = 2.0  # payoff is PAYOFF_BASE ** (number of flips)
 START_VALUE = 100.0  # initial wealth of a player
+COST_CONSTANT = 2.0  # price paid to play one round
 
-# --- Ensemble arm ----------------------------------------------------------
+# --- Convergence experiment ------------------------------------------------
 N_REPLICATIONS = 200  # independent repetitions of the whole experiment
 N_MAX = 100_000  # largest sample size on the convergence grid
-N_CHECKPOINTS = (10, 100, 1_000, 10_000, 100_000)  # rows of the paper table
-
-# --- Time arm --------------------------------------------------------------
-N_ROUNDS = 10_000  # sequential rounds played by a single player
-COSTS = (2.0, 5.0, 20.0)  # ticket price paid every round
-N_PATHS_SHOWN = 25  # context paths drawn behind the median in Figure 1
+N_CHECKPOINTS = (10, 100, 1_000, 10_000, 100_000)  # the notebook's draws_vec
