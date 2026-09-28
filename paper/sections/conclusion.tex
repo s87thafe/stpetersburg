@@ -3,14 +3,11 @@
 Both responses to the paradox solve it by assumption rather than by explanation.
 Bounding utility is the only condition that is both necessary and sufficient \citep{menger1934unbounded}, and the axiomatic theories impose it whether or not one finds it plausible \citep{fishburn1970utility}.
 The alternative response fixes a finite parameter: a maximum payout, a maximum playing time, or a probability threshold below which outcomes are ignored.
-An axiomization of the last of these is the least satisfying.
-Treating all probabilities below $1/10{,}000$ as zero is an arbitrary cut-off, and it is contradicted by the observed success of commercial lotteries, whose prizes are won with far smaller probabilities \citep{seidl2013meta}.
+The last of these is the least satisfying. Treating all probabilities below $1/10{,}000$ as zero is an arbitrary cut-off, and it is contradicted by the observed success of commercial lotteries, whose prizes are won with far smaller probabilities \citep{seidl2013meta}.
 
 The more basic point is that the assumptions generating the paradox cannot be met.
 An infinite expected payoff requires a counterparty with an unbounded bankroll and an unbounded amount of time, since the game ends only when heads appears.
 Once either is finite, the paradox disappears without any appeal to utility.
-A payout capped at $2^N$ leaves an expected value of $N+1$, so the value of the game grows only logarithmically in the bookmaker's capacity.
-The implication for experimental work is stark.
-An experimenter with a budget between 100 and 200 dollars is offering a game worth $8$; raising the budget to a million raises its value to $20$.
-The payouts required to make the St.\ Petersburg game worth a substantial stake are orders of magnitude beyond anything that can be credibly promised to a subject, which is why the paradox is untestable in its original form: what can be implemented in the laboratory is always a truncated game whose finite value is known in advance.
-The infinite expected value is thus an artefact of a game that no one can offer, and the empirical content of the paradox lies not in its resolution but in the observation that willingness to pay is bounded well below even these modest truncated values.
+A payout capped at $2^N$ leaves an expected value of $N+1$: an experimenter able to pay at most $2^{7} = 128$ dollars offers a game worth $8$, and raising the ceiling to $2^{20} \approx 10^{6}$ dollars raises its value only to $21$.
+The simulation shows that even the formally unbounded game yields a typical average payoff of about \simMedianEnd{} dollars over a million rounds.
+The infinite expected value is thus an artefact of a game that no one can offer and no one can observe.

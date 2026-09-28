@@ -10,6 +10,7 @@ SRC = Path(__file__).parent.resolve()
 ROOT = SRC.parent.parent
 DATA_PROCESSED = ROOT / "data" / "processed"
 FIGURES = ROOT / "output" / "figures"
+TABLES = ROOT / "output" / "tables"
 
 #: Master seed. Every draw in the project descends from this one integer.
 SEED = 25_092_026
@@ -21,6 +22,6 @@ START_VALUE = 100.0  # initial wealth of a player
 COST_CONSTANT = 2.0  # price paid to play one round
 
 # --- Convergence experiment ------------------------------------------------
-N_REPLICATIONS = 200  # independent repetitions of the whole experiment
-N_MAX = 100_000  # largest sample size on the convergence grid
+N_REPLICATIONS = 500  # independent repetitions of the whole experiment
+N_MAX = 1_000_000  # largest sample size on the convergence grid
 N_CHECKPOINTS = (10, 100, 1_000, 10_000, 100_000)  # the notebook's draws_vec

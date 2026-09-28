@@ -1,1 +1,23 @@
 \section{Simulation}
+
+The preceding solutions all operate on the infinite game.
+This section asks what the divergence looks like in a finite sample, since any observable version of the game, in a laboratory or elsewhere, is finite.
+
+The design is a Monte Carlo experiment.
+A single round draws coin flips until the first head appears, so the number of flips $k$ is geometric with parameter $1/2$ and the payoff is $2^{k}$.
+The sample mean is driven entirely by the largest realisation of $k$ in the sample: a draw of $k$ contributes $2^{k}/N$ to the mean, while the probability of observing it is $2^{-k}$.
+The experiment runs over \simGridPoints{} sample sizes spaced logarithmically from one round to \simNEnd{} rounds.
+At each sample size the entire experiment is repeated \simReps{} times independently, which yields the sampling distribution of the mean payoff.
+I report the median across replications rather than the mean, since the latter is subject to the same divergence as the object it would summarise.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{ensemble_means.pdf}
+    \caption{Sampling distribution of the mean payoff against sample size, over \simReps{} independent replications. The solid line is the median across replications, the shaded regions are quantile bands. The horizontal axis is logarithmic.}
+    \label{fig:ensemble_means}
+\end{figure}
+
+Figure~\ref{fig:ensemble_means} shows no convergence.
+The median sample mean rises from \simMedianStart{} at \simNStart{} rounds to \simMedianEnd{} at \simNEnd{} rounds. The linearity in log-scale suggest that the median itself diverges logarithmic.
+Furthermore, the distribution is sharply asymmetric. The lower quantiles track the median closely, because the small-$k$ draws that make up most of any sample concentrate quickly, whereas the upper band is outlier is wide and does not settle as the number of replications grows.
+The upper quantile does not stabilise as the number of replications grows. This is the display of the paradox itself: the sample mean is governed by rare large realisations, so no finite sample, and no finite number of samples, pins it down.
