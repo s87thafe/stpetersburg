@@ -5,10 +5,9 @@ This section asks what the divergence looks like in a finite sample, since any o
 
 The design is a Monte Carlo experiment.
 A single round draws coin flips until the first head appears, so the number of flips $k$ is geometric with parameter $1/2$ and the payoff is $2^{k}$.
-The sample mean is driven entirely by the largest realisation of $k$ in the sample: a draw of $k$ contributes $2^{k}/N$ to the mean, while the probability of observing it is $2^{-k}$.
 The experiment runs over \simGridPoints{} sample sizes spaced logarithmically from one round to \simNEnd{} rounds.
 At each sample size the entire experiment is repeated \simReps{} times independently, which yields the sampling distribution of the mean payoff.
-I report the median across replications rather than the mean, since the latter is subject to the same divergence as the object it would summarise.
+In order to showcase the distributionl properties of the results, the median of the sample means across replications is reported.
 
 \begin{figure}[htbp]
     \centering
